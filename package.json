@@ -7,12 +7,15 @@
     "build": "lerna exec npm run build",
     "dev": "lerna exec npm run dev --parallel",
     "clean:dist": "lerna exec -- rimraf ./dist",
-    "start": "run-script-os",
+    "start": "run-script-os --tunnel",
     "start:default": "cd packages/cli/bin && ./n8n",
+    "start:default-tunnel": "cd packages/cli/bin && ./n8n start --tunnel",
     "start:windows": "cd packages/cli/bin && n8n",
     "test": "lerna run test",
     "tslint": "lerna exec npm run tslint",
-    "watch": "lerna run --parallel watch"
+    "watch": "lerna run --parallel watch",
+    "santi": "lerna bootstrap --hoist && npm run build && npm run dev",
+    "santi:tunnel": "lerna bootstrap --hoist && npm run build && npm run start"
   },
   "devDependencies": {
     "lerna": "^3.13.1",

@@ -38,6 +38,10 @@ export async function copperApiRequest(this: IHookFunctions | IExecuteFunctions 
 	}
 
 	try {
+		// console.log('Options', options)
+		// const response = await this.helpers.request!(options);
+		// console.log('Response', response);
+		// return response;
 		return await this.helpers.request!(options);
 	} catch (error) {
 		let errorMessage = error.message;
